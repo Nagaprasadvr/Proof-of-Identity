@@ -47,10 +47,6 @@ pub struct DigitalIdentityParam {
     pub pan_number: String,
     pub aadhar_number: String,
     pub passport_id: String,
-    pub is_passport_attached: bool,
-    pub is_aadhar_attached: bool,
-    pub is_pan_attached: bool,
-    pub is_pic_attached: bool,
 }
 
 #[derive(AnchorSerialize, AnchorDeserialize)]

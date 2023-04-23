@@ -2,13 +2,13 @@
 seeds = false
 skip-lint = false
 [programs.localnet]
-digital_identity = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+digital_identity = "7E6f2pscJXdX8Jb1jbxE4ir5LPEqTH3FiLg4HQXTU11P"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "devnet"
+cluster = "localnet"
 wallet = "/home/nags/.config/solana/id.json"
 
 [scripts]

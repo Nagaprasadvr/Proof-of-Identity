@@ -54,7 +54,7 @@ pub mod digital_identity {
     pub fn verify_identity(ctx: Context<VerifyIdentity>) -> Result<()> {
         let ref dig_identity_acc = ctx.accounts.dig_identity_acc;
         let auth = ctx.accounts.authority.key();
-        if dig_identity_acc.authority == auth {
+        if dig_identity_acc.authority.to_string() == auth.to_string() {
             msg!("Digital Identity Verified");
             Ok(())
         } else {
@@ -66,9 +66,9 @@ pub mod digital_identity {
         let ref dig_proofs_acc = ctx.accounts.dig_proofs_acc;
         let ref dig_identity_acc = ctx.accounts.dig_identity_acc;
         let auth = ctx.accounts.authority.key();
-        if dig_identity_acc.authority == auth
-            && dig_proofs_acc.authority == auth
-            && dig_proofs_acc.dig_identity_pubkey == dig_identity_acc.key()
+        if dig_identity_acc.authority.to_string() == auth.to_string()
+            && dig_proofs_acc.authority.to_string() == auth.to_string()
+            && dig_proofs_acc.dig_identity_pubkey.to_string() == dig_identity_acc.key().to_string()
         {
             msg!("Digital Identity Verified");
             Ok(())
